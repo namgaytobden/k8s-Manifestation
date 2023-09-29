@@ -9,7 +9,7 @@ This is useful for automatically updating `key` references in your Kubernetes co
   - `key` specific yaml key you want to modify
   - `value` value to add to the `key`
 
-#### Modifying Single Key
+### Modifying Single Key
 
 This action allows you to automate the process of updating specific YAML files with new `value` for specific `key` based on matching `id`.
 - Make sure to use `id` to uniquely identify k8s manifests/resource files.
@@ -23,7 +23,7 @@ with:
   value: docker_repo:tag
 ```
 
-#### Modifying Multiple Keys
+### Modifying Multiple Keys
 
 - Uses line separator ' | '
 - Make sure that the `ids`, `keys` and `value` placement corresponds with one another correctly according to what you want to modify.  
