@@ -4,10 +4,10 @@ This action finds all **Kubernetes manifest** files containing `id` in their con
 This is useful for automatically updating `key` references in your Kubernetes configuration during deployment or GitOps process.
 
 - It takes in **4** inputs: *(**Required**)*
-  - `manifest_path` k8s resource path t
-  - `id` that uniquely identifies manifest 
-  - `block` specific yaml block you want to modify
-  - `value` modification value
+  - `manifest_path` k8s resource path 
+  - `id` which uniquely identifies manifest 
+  - `key` specific yaml key you want to modify
+  - `value` value to add to the `key`
 
 #### Modifying Single Key
 
