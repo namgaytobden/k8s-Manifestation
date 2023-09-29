@@ -15,7 +15,7 @@ inputs:
     description: Tag name that you want to manipulate  
     required: true
 
-  block:
+  key:
     description: yaml block path
     required: true
 
@@ -39,6 +39,6 @@ runs:
       env: 
         MANIFEST_PATH: ${{ inputs.manifest_path }}
         ID: ${{ inputs.id }}
-        BLOCK: ${{ inputs.block }}
+        BLOCK: ${{ inputs.key }}
         VALUE: ${{ inputs.value }}
         
