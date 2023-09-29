@@ -11,7 +11,7 @@ inputs:
     description: Manifest path
     required: true
   
-  tag:
+  id:
     description: Tag name that you want to manipulate  
     required: true
 
@@ -38,7 +38,7 @@ runs:
       run: bash action.sh
       env: 
         MANIFEST_PATH: ${{ inputs.manifest_path }}
-        TAG: ${{ inputs.tag }}
+        ID: ${{ inputs.id }}
         BLOCK: ${{ inputs.block }}
         VALUE: ${{ inputs.value }}
         
