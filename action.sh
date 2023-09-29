@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Split input variables into arrays
-IFS=" " read -ra IDS <<< "$ID"
-IFS=" " read -ra VALUES <<< "$VALUE"
-IFS=" " read -ra BLOCKS <<< "$BLOCK"
+IFS=" | " read -ra IDS <<< "$ID"
+IFS=" | " read -ra VALUES <<< "$VALUE"
+IFS=" | " read -ra BLOCKS <<< "$BLOCK"
 
 for i in "${!IDS[@]}"; do
   ID="${IDS[i]}"
