@@ -1,0 +1,44 @@
+name: k8s manifestation 
+description: Manipulate and apply k8s manifest
+author: namgaytobden
+branding:
+  icon: terminal
+  color: white
+
+inputs:
+
+  manifest_path:
+    description: Manifest path
+    required: true
+  
+  tag:
+    description: Tag name that you want to manipulate  
+    required: true
+
+  block:
+    description: yaml block path
+    required: true
+
+  value:
+    description: value for the block specified 
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+
+    - name: Install yq
+      shell: bash
+      run: sudo snap install yq
+
+    - name: Run script
+      shell: bash
+      run: bash action.sh
+      env: 
+        MANIFEST_PATH: ${{ inputs.manifest_path }}
+        TAG: ${{ inputs.tag }}
+        BLOCK: ${{ inputs.block }}
+        VALUE: ${{ inputs.value }}
+        
